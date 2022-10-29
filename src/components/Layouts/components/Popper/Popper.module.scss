@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  gap: 10px;
+  min-width: 156px;
+  background: rgb(230, 232, 237);
+  border-radius: 8px;
+  padding: 10px 30px 10px 25px;
+  transition: transform 0.3s ease-in 0s;
+}
