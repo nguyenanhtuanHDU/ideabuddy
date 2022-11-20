@@ -1,5 +1,6 @@
 .wrapper {
   max-width: fit-content;
+  margin: 5px 0;
   cursor: pointer;
   .inner {
     position: relative;
@@ -33,13 +34,13 @@
     &:hover .noLine {
       display: none;
     }
-
     svg {
       width: 10px;
       height: 6px;
     }
     .title {
       transition: 0.2s ease-in-out;
+      line-height: 27px;
     }
     &:hover .changeColor {
       color: var(--yellow-darker);
@@ -60,6 +61,178 @@
         transform: translateX(-50%);
         bottom: -2px;
         background-color: var(--yellow-darker);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 740px) {
+  .wrapper {
+    margin: 0;
+    max-width: 100%;
+    cursor: pointer;
+    padding: 0 30px;
+    .inner {
+      border-top: 0.5px solid #ccc;
+      position: relative;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #081e4a;
+      font-weight: 500;
+      width: 100%;
+      height: 56px;
+      .underline {
+        position: absolute;
+        width: 3px;
+        height: 0%;
+        left: 0;
+        top: 0;
+        background-color: var(--yellow-darker);
+        transition: all 0.2s ease-in-out 0s;
+      }
+      &:hover .underline {
+        width: 3px;
+        height: 0%;
+        left: 0;
+        top: 0;
+      }
+      .fullLine {
+        height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+      }
+      &:hover .fullLine {
+        height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+      }
+      .noLine {
+        display: none;
+      }
+      &:hover .noLine {
+        display: none;
+      }
+      svg {
+        width: 10px;
+        height: 6px;
+      }
+      .title {
+        transition: 0.2s ease-in-out;
+        line-height: 24px;
+        font-size: 16px;
+        opacity: 0.8;
+        color: var(--dark-blue-color);
+      }
+      &:hover .changeColor {
+        color: var(--yellow-darker);
+      }
+    }
+    .hoverIconUp:hover img {
+      transform: rotate(180deg);
+      transition: all 0.2s ease;
+    }
+    .active {
+      .inner {
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -2px;
+          background-color: var(--yellow-darker);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .wrapper {
+    margin: 0;
+    max-width: 100%;
+    cursor: pointer;
+    padding: 0 30px;
+    .inner {
+      border-top: 0.5px solid #ccc;
+      position: relative;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #081e4a;
+      font-weight: 500;
+      width: 100%;
+      height: 56px;
+      .underline {
+        position: absolute;
+        width: 3px;
+        height: 0%;
+        left: 0;
+        top: 0;
+        background-color: var(--yellow-darker);
+        transition: all 0.2s ease-in-out 0s;
+      }
+      &:hover .underline {
+        width: 3px;
+        height: 0%;
+        left: 0;
+        top: 0;
+      }
+      .fullLine {
+        height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+      }
+      &:hover .fullLine {
+        height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -15px;
+      }
+      .noLine {
+        display: none;
+      }
+      &:hover .noLine {
+        display: none;
+      }
+      svg {
+        width: 10px;
+        height: 6px;
+      }
+      .title {
+        transition: 0.2s ease-in-out;
+        line-height: 24px;
+        font-size: 16px;
+        opacity: 0.8;
+        color: var(--dark-blue-color);
+      }
+      &:hover .changeColor {
+        color: var(--yellow-darker);
+      }
+    }
+    .hoverIconUp:hover img {
+      transform: rotate(180deg);
+      transition: all 0.2s ease;
+    }
+    .active {
+      .inner {
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -2px;
+          background-color: var(--yellow-darker);
+        }
       }
     }
   }

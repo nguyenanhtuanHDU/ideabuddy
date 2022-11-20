@@ -9,6 +9,7 @@ function Button({
   primary,
   outline,
   large,
+  responsive,
   onClick,
   target,
   to,
@@ -30,7 +31,7 @@ function Button({
 
   return (
     <Tag
-      className={cx('wrapper', { primary, outline, large })}
+      className={cx('wrapper', { primary, outline, large }, responsive)}
       {..._props}
     >
       {children}

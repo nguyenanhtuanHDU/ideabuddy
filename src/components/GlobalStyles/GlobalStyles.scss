@@ -11,11 +11,13 @@
   --black-color: #000;
   --white-color: #fff;
   --yellow-darker: rgb(254, 185, 44);
+  --dark-blue-color: #081e4a;
 }
 html {
 }
 a {
   text-decoration: none;
+  color: white;
 }
 button,
 input {
@@ -24,4 +26,7 @@ input {
 }
 button {
   cursor: pointer;
+}
+ul {
+  list-style: none;
 }

@@ -1,0 +1,161 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  background-color: rgba(0, 0, 0, 0.25);
+  .inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form {
+      max-height: calc(100% - 64px);
+      width: 481px;
+      background: #fff;
+      max-width: calc(100% - 64px);
+      background-color: white;
+      border-radius: 10px;
+      padding: 32px;
+      display: flex;
+      overflow-y: scroll;
+      gap: 20px;
+      flex-direction: column;
+      &-heading {
+        color: var(--dark-blue-color);
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+      }
+      &-title {
+        color: var(--black-color);
+        text-align: center;
+      }
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      &-item {
+        background-color: rgba(0, 0, 0, 0.06);
+        position: relative;
+        height: 56px;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.09);
+        }
+        .line {
+          // position: absolute;
+          // bottom: 0;
+          // left: 0;
+          // right: 0;
+          // height: 1px;
+          // background-color: var(--black-color);
+
+          border-bottom: 2px solid rgb(14, 100, 230);
+          left: 0px;
+          bottom: 0px;
+          content: '';
+          position: absolute;
+          right: 0px;
+          transform: scaleX(0);
+          transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+          pointer-events: none;
+        }
+        .activeLine {
+          // background-color: var(--primary-color);
+          transform: scaleX(1);
+        }
+        label {
+          position: absolute;
+          color: rgba(0, 0, 0);
+          font-weight: 400;
+          line-height: 1.4375em;
+          letter-spacing: 0.00938em;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: calc(100% - 24px);
+          font-family: Roboto, Helvetica, Arial, sans-serif;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          transform: translate(12px, 16px) scale(1);
+          transition: all 0.1s linear;
+        }
+        .activeLabel {
+          color: var(--primary-color);
+          font-size: 14px;
+          top: -10px;
+        }
+        .noColor {
+          color: rgba(0, 0, 0);
+        }
+        .form-input {
+          transition: all 0.3s ease;
+          background-color: rgba(0, 0, 0, 0.06);
+          height: 100%;
+          width: 100%;
+          background-color: transparent;
+          padding: 25px 12px 8px 12px;
+          font-size: 16px;
+        }
+        textarea {
+          resize: none;
+          border: 0;
+          outline: none;
+          height: 69px;
+          font-size: 16px;
+          padding: 25px 12px 8px 12px;
+        }
+      }
+      .big {
+        height: 102px;
+      }
+      &-submit {
+        width: 117px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 4px;
+        margin: 0 auto;
+        padding: 8px 22px;
+        letter-spacing: 0.02857em;
+        font-weight: 500;
+        font-size: 0.9375rem;
+        line-height: 1.75;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+          box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+          border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+          color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        color: rgb(255, 255, 255);
+        background-color: rgb(14, 100, 230);
+        box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
+          rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+        &:hover {
+          background-color: rgb(9, 70, 161);
+          box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px,
+            rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
+        }
+      }
+      &-note {
+        font-weight: 300;
+        font-size: 12px;
+        max-width: 350px;
+        margin: 0 auto;
+        text-align: center;
+        a {
+          transition: all 0.2s ease-in-out 0s;
+          color: rgb(254, 185, 44);
+          margin: 0px 3px;
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+}

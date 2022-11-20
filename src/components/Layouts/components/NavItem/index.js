@@ -11,6 +11,7 @@ const iconDown =
 function NavItem({
   children,
   to,
+  href,
   iconDownProp,
   hoverIconUp = false,
   active,
@@ -18,11 +19,19 @@ function NavItem({
   noLine,
   changeColor,
 }) {
+  let TabType = Link
+  const _props = {}
+  if (to) {
+    _props.to = to
+  } else if (href) {
+    _props.href = href
+    TabType = 'a'
+  }
   return (
     <div className={cx('wrapper', { hoverIconUp, active })}>
-      <Link
+      <TabType
+        {..._props}
         className={cx('inner')}
-        to={to}
       >
         <div className={cx('underline', { fullLine, noLine })}></div>
         <span className={cx('title', { changeColor })}>{children}</span>
@@ -32,7 +41,7 @@ function NavItem({
             src={iconDown}
           />
         )}
-      </Link>
+      </TabType>
     </div>
   )
 }

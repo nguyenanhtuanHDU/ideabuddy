@@ -4,6 +4,7 @@
   background-color: var(--white-color);
   box-shadow: rgb(0 0 0 / 5%) 0px 4px 4px;
   --padding-header: 60px;
+  z-index: 9999;
   .inner {
     display: flex;
     justify-content: space-between;
@@ -11,44 +12,56 @@
     height: 100%;
     width: calc(100% - var(--padding-header) * 2);
     margin: 0 auto;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
+    padding-top: 12px;
     .logo {
       width: 150px;
       height: 34.42px;
       margin-right: 40px;
+      margin-top: -4px;
       img {
-        margin-top: 4px;
         width: 100%;
         height: 100%;
+        margin-top: 0;
       }
     }
-    .nav {
-      display: flex;
-      gap: 40px;
-      width: 55%;
-      margin-top: 14px;
-    }
-    .account {
-      display: flex;
-      width: 300px;
-      gap: 10px;
-      margin-top: 10px;
-      margin-right: -10px;
-      height: 45px;
-    }
-    .bars {
-      display: none;
+    .menu-wrapper {
+      .nav-account {
+        display: flex;
+        gap: 287px;
+      }
+      .nav {
+        display: flex;
+        gap: 40px;
+        width: 55%;
+        margin-top: 14px;
+      }
+      .account {
+        padding-right: 10px;
+        display: flex;
+        width: 300px;
+        gap: 10px;
+        margin-top: 10px;
+        margin-right: -10px;
+        height: 45px;
+      }
+      .bars {
+        display: none;
+      }
     }
   }
 }
 
 @media screen and (max-width: 1023px) and (min-width: 740px) {
   .wrapper {
+    position: relative;
+    --header-height: 74.83px;
     width: 100%;
-    height: 80px;
+    height: var(--header-height);
     background-color: var(--white-color);
     box-shadow: rgb(0 0 0 / 5%) 0px 4px 4px;
     --padding-header: 30px;
+    z-index: 9999;
     .inner {
       display: flex;
       justify-content: space-between;
@@ -66,24 +79,69 @@
           height: 100%;
         }
       }
-      .nav {
-        // responsive
-        display: none;
-        gap: 40px;
-        width: 55%;
-        margin-top: 14px;
+      .menu-wrapper {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.25);
+        .nav-account {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+          top: 0;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+          margin-top: 10px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          padding-bottom: 30px;
+          gap: 20px;
+          background-color: var(--white-color);
+          display: flex;
+          animation: active_menu 0.5s ease;
+        }
+
+        @keyframes active_menu {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+        }
+        .nav {
+          background: var(--white-color);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 30px 0 0 0;
+          margin-top: 0;
+          gap: 0;
+          .subnav {
+            margin-left: -20px;
+            margin-top: -10px;
+            background-color: var(--white-color);
+          }
+        }
+        .account {
+          padding: 0 30px;
+          width: 300px;
+          gap: 10px;
+          margin-top: 0;
+          margin-right: -10px;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
       }
-      .account {
-        // responsive
+      .activeMenuWrapper {
         display: none;
-        width: 300px;
-        gap: 10px;
-        margin-top: 10px;
-        margin-right: -10px;
-        height: 45px;
       }
       .bars {
         display: block;
+        background-color: transparent;
         .line {
           width: 36px;
           height: 3px;
@@ -116,4 +174,117 @@
 }
 
 @media screen and (max-width: 739px) {
+  .wrapper {
+    position: relative;
+    --header-height: 74.83px;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--white-color);
+    box-shadow: rgb(0 0 0 / 5%) 0px 4px 4px;
+    --padding-header: 30px;
+    z-index: 9999;
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      width: calc(100% - var(--padding-header) * 2);
+      margin: 0 auto;
+      .logo {
+        width: 150px;
+        height: 34.42px;
+        margin-right: 40px;
+        img {
+          margin-top: 4px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .menu-wrapper {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.25);
+        .nav-account {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+          top: 0;
+          flex-direction: column;
+          width: 100%;
+          gap: 0;
+          margin-top: 10px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          padding-bottom: 30px;
+          gap: 20px;
+          background-color: var(--white-color);
+          display: flex;
+          animation: active_menu 0.5s ease;
+        }
+
+        @keyframes active_menu {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+        }
+        .nav {
+          background: var(--white-color);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          padding: 30px 0 0 0;
+          margin-top: 0;
+          gap: 0;
+        }
+        .account {
+          padding: 0 30px;
+          width: 300px;
+          gap: 10px;
+          margin-top: 0;
+          margin-right: -10px;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+      .activeMenuWrapper {
+        display: none;
+      }
+      .bars {
+        display: block;
+        background-color: transparent;
+        .line {
+          width: 36px;
+          height: 3px;
+          margin: 7px;
+          background-color: rgb(153, 153, 153);
+          transition: all 0.3s ease 0s;
+        }
+      }
+      .toggle {
+        display: block;
+        .line {
+          width: 36px;
+          height: 3px;
+          margin: 7px;
+          background-color: rgb(153, 153, 153);
+          transition: all 0.3s ease 0s;
+        }
+        .line-1 {
+          transform: rotate(-45deg) translate(-7px, 7px);
+        }
+        .line-2 {
+          opacity: 0;
+        }
+        .line-3 {
+          transform: rotate(45deg) translate(-7px, -7px);
+        }
+      }
+    }
+  }
 }
