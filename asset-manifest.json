@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nguyenanhtuanHDU/ideabuddy.git/static/css/main.9d24ce78.css",
+    "main.js": "/nguyenanhtuanHDU/ideabuddy.git/static/js/main.32947f14.js",
+    "static/js/787.adf6468c.chunk.js": "/nguyenanhtuanHDU/ideabuddy.git/static/js/787.adf6468c.chunk.js",
+    "static/media/logo1.svg": "/nguyenanhtuanHDU/ideabuddy.git/static/media/logo1.cfc17485979166c90337cc2c6a546c72.svg",
+    "index.html": "/nguyenanhtuanHDU/ideabuddy.git/index.html",
+    "main.9d24ce78.css.map": "/nguyenanhtuanHDU/ideabuddy.git/static/css/main.9d24ce78.css.map",
+    "main.32947f14.js.map": "/nguyenanhtuanHDU/ideabuddy.git/static/js/main.32947f14.js.map",
+    "787.adf6468c.chunk.js.map": "/nguyenanhtuanHDU/ideabuddy.git/static/js/787.adf6468c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d24ce78.css",
+    "static/js/main.32947f14.js"
+  ]
+}
